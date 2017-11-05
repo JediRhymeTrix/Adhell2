@@ -37,7 +37,18 @@
         <service
             android:name="com.fiendfyre.AdHell2.service.HeartbeatIntentService"
             android:exported="false"/>
-
+        <!-- TileService for QuickSettings Toggle -->
+        <service
+            android:name="com.fiendfyre.AdHell2.service.QuickSettingsService"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action 
+                    android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        
         <receiver
             android:name="com.fiendfyre.AdHell2.receiver.CustomDeviceAdminReceiver"
             android:description="@string/app_name"
